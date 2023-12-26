@@ -23,6 +23,8 @@ RUN ./DockerInit.sh "$TARGETARCH"
 # ========================================================
 FROM alpine
 ENV TZ=Asia/Tehran
+ENV XUI_ADMIN_USERNAME=adminn
+ENV XUI_ADMIN_PASSWORD=Adminn12345
 WORKDIR /app
 
 RUN apk add --no-cache --update \

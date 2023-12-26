@@ -36,8 +36,8 @@ func initUser() error {
 	if err != nil {
 		return err
 	}
-	userName:=config.GetUsername(),
-	pass:=config.GetPassword(),
+	userName:=config.GetUsername()
+	pass:=config.GetPassword()
 	if count == 0 {
 		user := &model.User{
 			Username:    userName,

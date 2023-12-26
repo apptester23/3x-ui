@@ -36,10 +36,12 @@ func initUser() error {
 	if err != nil {
 		return err
 	}
+	userName:=config.GetUsername(),
+	pass:=config.GetPassword(),
 	if count == 0 {
 		user := &model.User{
-			Username:    "admin",
-			Password:    "admin",
+			Username:    userName,
+			Password:    pass,
 			LoginSecret: "",
 		}
 		return db.Create(user).Error

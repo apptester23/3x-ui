@@ -66,6 +66,22 @@ func GetDBPath() string {
 	return fmt.Sprintf("%s/%s.db", GetDBFolderPath(), GetName())
 }
 
+func GetUsername() string {
+	username := os.Getenv("XUI_ADMIN_USERNAME")
+	if username == "" {
+		username = "admin"
+	}
+	return username
+}
+
+func GetPassword() string {
+	password := os.Getenv("XUI_ADMIN_PASSWORD")
+	if password == "" {
+		password = "admin"
+	}
+	return password
+}
+
 func GetLogFolder() string {
 	logFolderPath := os.Getenv("XUI_LOG_FOLDER")
 	if logFolderPath == "" {

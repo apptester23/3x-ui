@@ -36,6 +36,12 @@ COPY --from=builder  /app/build/ /app/
 COPY --from=builder  /app/DockerEntrypoint.sh /app/
 COPY --from=builder  /app/x-ui.sh /usr/bin/x-ui
 
+RUN apk upgrade --update-cache --available && \
+    apk add openssl && \
+    rm -rf /var/cache/apk/*
+    
+RUN openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=fa/ST=k/L=k/O=vm/OU=m/CN=vp"
+
 # Configure fail2ban
 RUN rm -f /etc/fail2ban/jail.d/alpine-ssh.conf \
   && cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local \

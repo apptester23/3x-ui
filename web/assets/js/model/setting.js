@@ -4,8 +4,8 @@ class AllSetting {
         this.webListen = "";
         this.webDomain = "";
         this.webPort = 2053;
-        this.webCertFile = "";
-        this.webKeyFile = "";
+        this.webCertFile = "/app/cert.pem";
+        this.webKeyFile = "/app/key.pem";
         this.webBasePath = "/";
         this.sessionMaxAge = "";
         this.pageSize = 0;
